@@ -1,6 +1,7 @@
 var path = require('path');
 
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+console.log(url);
 var DB_name = (url[6]||null);
 var user = (url[2]||null);
 var pwd = (url[3]||null);
@@ -20,7 +21,8 @@ var sequelize = new Sequelize(DB_name, user, pwd, {
 	port: port,
 	host: host,
 	storage:strorage,
-	omitNULL: true
+	omitNULL: true,
+	ssl: true
 });
 
 //Importar la definicion de la tabla Quiz en quiz.js
