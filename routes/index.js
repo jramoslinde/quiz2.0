@@ -13,6 +13,8 @@ router.get('/author', function(req, res, next) {
   res.render('author');
 });
 
+router.param('quizId', quizController.load);
+
 router.get('/quizes', quizController.index);
 router.get('/quizes/:quizId(\\d+)',quizController.show);
 router.get('/quizes/:quizId/answer',quizController.answer);
