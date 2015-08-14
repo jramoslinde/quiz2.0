@@ -17,6 +17,9 @@
       <span><a href="/author">Autor</a></span>
     </nav>
     <section class="main" id="s1">
+      <% if(errors.length) { %>
+        <span id='ErrorMsgs'>Faltan campos obligatorios </br></span>
+      <% } %>
       <div><%- body %></div>
     </section>
     <footer class="main" id="f1">
